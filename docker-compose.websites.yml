@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  corp:
+    container_name: fli-corp-${env}
+    image: 206673267443.dkr.ecr.ap-southeast-1.amazonaws.com/fli-corp:${env}
+    ports:
+      - 3000:3000
+  aspire:
+    container_name: fli-aspire-${env}
+    image: 206673267443.dkr.ecr.ap-southeast-1.amazonaws.com/fli-aspire:${env}
+    ports:
+      - 3010:3000
+  prestige:
+    container_name: fli-prestige-${env}
+    image: 206673267443.dkr.ecr.ap-southeast-1.amazonaws.com/fli-prestige:${env}
+    ports:
+      - 3020:3000
+  futura:
+    container_name: fli-futura-${env}
+    image: 206673267443.dkr.ecr.ap-southeast-1.amazonaws.com/fli-futura:${env}
+    ports:
+      - 3030:3000

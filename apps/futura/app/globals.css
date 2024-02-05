@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e12827;
+  border-radius: 20px;
+}
+
+.MuiAutocomplete-popper .MuiPaper-root {
+  font-family: inherit;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.MuiSlider-root {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: -2px;
+}
+
+#property-locator .MuiAutocomplete-root fieldset {
+  display: none;
+}
+
+#property-locator .MuiAutocomplete-root .MuiInputBase-root {
+  background: #f6f6f6;
+  border-radius: 0;
+  padding: 0 13px !important;
+  font-family: inherit !important;
+}
+
+#property-locator .MuiAutocomplete-root input {
+  padding: 0 !important;
+  height: 33px;
+  font-size: 14px;
+  font-weight: 700;
+  color: black !important;
+}
+
+#property-locator .MuiAutocomplete-root input::placeholder {
+  color: black !important;
+  opacity: 1;
+}
+
+/* Navlinks hover effect */
+.link-hover {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.link-hover:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #e02926;
+  transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  width: 0;
+}
+.link-hover:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.container {
+  max-width: 1223px;
+  margin: auto;
+  width: 95%;
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+.zsiq_custommain {
+  display: none !important;
+}
+
+.slick-slide {
+  z-index: 1;
+}
+
+.slick-active {
+  z-index: 2;
+}

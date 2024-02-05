@@ -1,0 +1,54 @@
+stages:
+  - build_dev
+  - deploy_dev
+  - build_deploy_staging
+
+variables:
+  env: $CI_COMMIT_REF_NAME
+  account_id: "206673267443"
+  region: "ap-southeast-1"
+  prefix: "fli"
+  image_prefix_name: "${account_id}.dkr.ecr.${region}.amazonaws.com/${prefix}"
+
+# DEVELOPMENT ENVIRONMENT #
+build_dev:
+  tags:
+    - fli-cicd-runner
+  stage: build_dev
+  script:
+    - echo "[INFO] Stop running services"
+    # - docker compose -f docker-compose.websites.yml down --remove-orphans
+    # - docker compose -f docker-compose.cms.yml down --remove-orphans
+    # - docker compose -f docker-compose.cms.yml up -d
+    - echo "[INFO] Login to ECR"
+    - aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${account_id}.dkr.ecr.${region}.amazonaws.com
+    - echo "[INFO] Build container image"
+    - chmod +x docker-build-script.sh
+    - ./docker-build-script.sh "${image_prefix_name}"
+  only:
+    - dev
+
+deploy_dev:
+  tags:
+    - fli-cicd-runner
+  stage: deploy_dev
+  script:
+    - echo "[INFO] Start services"
+    # - docker-compose -f docker-compose.dev.yml down -v #--remove-orphans #! Enable this if you want to bring down the services first and hard reset the containers !#
+    - docker compose -f docker-compose.cms.yml up -d --force-recreate
+    - docker compose -f docker-compose.websites.yml up -d --force-recreate
+  only:
+    - dev
+
+build_deploy_staging:
+  tags:
+    - fli-cicd-runner
+  stage: build_deploy_staging
+  script:
+    - echo "[INFO] Login to ECR"
+    - aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${account_id}.dkr.ecr.${region}.amazonaws.com
+    - echo "[INFO] Build and deploy container image"
+    - chmod +x docker-build-deploy-script.sh
+    - ./docker-build-deploy-script.sh "${image_prefix_name}"
+  only:
+    - staging

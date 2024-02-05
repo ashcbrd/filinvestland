@@ -1,0 +1,66 @@
+.fade {
+  transition: opacity 0.3s ease-in-out;
+}
+.fadeVisible {
+  opacity: 1;
+}
+
+.fadeInvisible {
+  opacity: 0;
+}
+
+/** DOWN **/
+.fadeDown {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.fadeDownVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeDownInvisible {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/** Up **/
+.fadeUp {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.fadeUpVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeUpInvisible {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/** Right **/
+.fadeRight {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.fadeRightVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeRightInvisible {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+/** Left **/
+.fadeLeft {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.fadeLeftVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeLeftInvisible {
+  opacity: 0;
+  transform: translateX(-40px);
+}

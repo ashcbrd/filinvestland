@@ -1,0 +1,13 @@
+.git*
+**/README.md
+**/.env*
+/apps/aspire
+/apps/cms
+/apps/land
+/apps/prestige
+/apps/futura
+CHANGELOG.md
+node_modules/
+package.json
+turbo.json
+yarn.lock

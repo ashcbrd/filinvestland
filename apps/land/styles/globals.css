@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ul,
+  ol {
+    list-style: revert;
+  }
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/fonts/Futura/Futura\ Book\ font.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/fonts/Futura/futura\ medium\ bt.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../assets/fonts/Futura/futura\ medium\ bt.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Futura";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sketch-bg {
+  background-image: url("/sketch-bg.png");
+  background-size: 1200px;
+
+  background-repeat: no-repeat;
+}
+
+.sketch-bg-norepeat {
+  background-image: url("/sketch-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sketch-bg-dividend {
+  background-image: url("/sketch-house.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sketch-bg-stock {
+  background-image: url("/sketch-house.png");
+  background-size: 1400px;
+  background-position: 100px 400px;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+  margin: 2em;
+  padding: 0;
+}
+
+.diamond {
+  margin: 0 !important;
+}
+
+.diamond > li {
+  margin: 0 !important;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.diamond > li::after {
+  content: "";
+  height: 0.55em;
+  width: 0.55em;
+  background: #163e82;
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 0.25em;
+  left: 0;
+}
+
+.bg-gradient-effect {
+  background: linear-gradient(
+    to top,
+    rgba(6, 46, 113, 0.8) 25%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.animateBg {
+  animation: zoom-out 5s ease-in-out forwards;
+}
+
+@media screen and (max-width: 1560px) {
+  body {
+    zoom: 83% !important;
+  }
+
+  .captcha div div div div iframe {
+    zoom: 1.21;
+  }
+
+  .image-float {
+    height: 82px !important;
+    width: 82px !important;
+  }
+
+  .chat-with-us-float {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+  .chat-with-us-circle {
+    height: 84px;
+    width: 84px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .image-float {
+    height: 64px !important;
+    width: 64px !important;
+  }
+
+  .chat-with-us-float {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .chat-with-us-circle {
+    height: 70px;
+    width: 70px;
+  }
+}
+@media screen and (max-width: 1560px) {
+  .filpay-frame {
+    height: 8300px;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .filpay-frame {
+    height: 8800px;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .filpay-frame {
+    height: 9700px;
+  }
+}
+@media screen and (max-width: 785px) {
+  .filpay-frame {
+    height: 11650px;
+  }
+}
+@media screen and (max-width: 405px) {
+  .filpay-frame {
+    height: 12700px;
+  }
+}
+
+@media screen and (min-width: 1561px) {
+  .filpay-frame {
+    height: 6900px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .image-float {
+    height: 64px !important;
+    width: 64px !important;
+  }
+}
+
+@media screen and (min-width: 1190px) {
+  .showMini {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .hiddenNav {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .zoomOut {
+    zoom: 55%;
+  }
+}
+
+@media screen and (min-width: 2000px) and (min-height: 1200px) {
+  .fixHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* .career-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
+
+.career-content strong {
+  font-weight: bolder;
+}
+
+.career-content p {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.career-content li {
+  list-style-type: disc;
+}
+
+.career-content li ul li {
+  list-style-type: circle;
+}
+
+.career-content ul {
+  padding: 20px;
+  margin: 0;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+  .text-shadow {
+    text-shadow: none;
+  }
+}
+
+.scroll-sm::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scroll-sm::-webkit-scrollbar-thumb {
+  background-color: rgb(192, 192, 192);
+  border-radius: 1px;
+}
+
+.scroll-md::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scroll-md::-webkit-scrollbar-thumb {
+  background-color: rgb(192, 192, 192);
+  border-radius: 4px;
+}
+
+.scroll-lg::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-lg::-webkit-scrollbar-thumb {
+  background-color: rgb(192, 192, 192);
+  border-radius: 1px;
+}
+
+#zsiq_float img {
+  height: 72px !important;
+  width: 72px !important;
+}
+
+div iframe[title="recaptcha challenge expires in two minutes"] {
+  zoom: 120.5% !important;
+}
+
+
+/* * {
+  outline: solid 1px red;
+} */

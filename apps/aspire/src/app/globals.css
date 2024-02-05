@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: GetLost;
+  src: url("/fonts/getlost/getlost.ttf");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Cabin", sans-serif !important;
+  /* zoom: 83% !important; */
+}
+
+.container {
+  max-width: 1410px;
+  margin: auto;
+  width: 95%;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: normal;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 500;
+}
+
+p {
+  padding-bottom: 30px;
+}
+
+p:last-child {
+  padding-bottom: 0;
+}
+
+#property-filter input::placeholder {
+  color: #aaa !important;
+}
+
+input::placeholder {
+  color: #787878;
+}
+
+input,
+textarea {
+  border: 1px solid #d9d2d2;
+  height: 48px;
+  padding: 0 19px;
+  width: 100%;
+  outline: 0;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0679bd;
+}
+
+textarea {
+  padding-top: 12px;
+  height: 101px;
+  resize: none;
+}
+
+#property-filter input {
+  font-size: 20px;
+  color: #1c1c1c;
+  line-height: 1;
+  padding: 0;
+  padding-bottom: 18px;
+  border: 0;
+  border-bottom: solid 1px #d2d2d2;
+  outline: 0;
+  height: auto;
+}
+
+#property-filter .MuiAutocomplete-root fieldset {
+  display: none;
+}
+
+#property-filter .MuiAutocomplete-root .MuiInputBase-root {
+  padding: 0;
+  border-radius: 0;
+}
+
+#property-filter .MuiAutocomplete-root input {
+  font-size: 20px;
+  color: #1c1c1c;
+  font-family: "Cabin", sans-serif;
+  border: 0;
+  padding: 0;
+  line-height: 1 !important;
+  padding-bottom: 18px;
+  height: auto;
+}
+
+#property-filter .MuiSlider-root {
+  color: #d6d6d6 !important;
+  padding: 0 !important;
+  margin-bottom: -1px;
+}
+
+#property-filter .MuiSlider-root .MuiSlider-thumb,
+#property-filter .MuiSlider-root .MuiSlider-track {
+  background-color: #005587;
+}
+
+#property-locator .MuiAutocomplete-root fieldset {
+  display: none;
+}
+
+#property-locator .MuiAutocomplete-root .MuiInputBase-root {
+  background: #f6f6f6;
+  border-radius: 0;
+  padding: 0 13px !important;
+  font-family: inherit !important;
+}
+
+#property-locator .MuiAutocomplete-root input {
+  padding: 0 !important;
+  height: 43px;
+  font-size: 16px;
+  color: black !important;
+}
+
+#property-locator .MuiAutocomplete-root input::placeholder {
+  color: black !important;
+  opacity: 1;
+}
+
+#main-header input::placeholder {
+  color: #cdedff;
+}
+
+#map {
+  width: 100%;
+  /* height: 743px; */
+}
+
+.MuiAutocomplete-popper .MuiPaper-root {
+  font-family: inherit;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.slick-slider .slick-slide > div {
+  width: 100%;
+}
+
+.slick-slider .slick-list {
+  width: 100%;
+}
+
+.slick-slider .slick-list .slick-slide {
+    z-index: 1;
+}
+
+.slick-slider .slick-list .slick-slide.slick-active {
+    z-index: 2;
+}
+
+.slick-dots {
+    margin-top: 20px !important;
+    bottom: auto !important;
+    top: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.slick-dots li {
+    margin: 0 !important;
+    margin: 0 5px !important;
+    width: auto !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+}
+
+.slick-dots li button:before {
+    display: none !important;
+}
+
+.slick-dots li button {
+    width: 13px !important;
+    height: 13px !important;
+    border-radius: 100% !important;
+    background-color: white !important;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #00A1FF !important;
+}
+
+.home-banner .slick-slider {
+  display: flex;
+}
+
+.home-banner .slick-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects #featured .slick-slider > button:last-child {
+  right: 100px !important;
+}
+
+#projects #featured .slick-slider > button:first-child {
+  left: 100px !important;
+}
+
+.virtual-tour-banner::after {
+  content: "";
+  background: linear-gradient(0deg, #031b2a 45%, #000000 80%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+}
+
+.preference-section::after {
+  content: "";
+  background: #000000;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+@media (max-width: 991px) {
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  
+  #property-filter input {
+    font-size: 17px;
+    padding-bottom: 10px;
+  }
+}
+
+.zsiq_custommain {
+    display: none !important;
+}
+
+p:empty {
+    padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    #projects #featured .slick-slider > button:first-child {
+        left: auto !important;
+    }
+
+    #property-filter .MuiAutocomplete-root input {
+        font-size: 15px;
+    }
+
+    .MuiMasonry-root {
+        display: block !important;
+    }
+
+    .MuiMasonry-root > * {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+.MuiMasonry-root > * {
+    margin: 0 !important;
+}
+
+.gm-style .gm-style-iw-c {
+  box-shadow: none !important;
+  top: -35px !important;
+  border-radius: 0 !important;
+  padding-left: 17px !important;
+  padding-top: 17px !important;
+}
+
+.gm-style-iw-tc {
+  display: none !important;
+}

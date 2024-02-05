@@ -1,0 +1,11 @@
+{
+    "AutoScalingGroupName": "fli-cms-asg",
+    "Preferences": {
+      "InstanceWarmup": 480,
+      "MinHealthyPercentage": 90,
+      "AutoRollback": false,
+      "ScaleInProtectedInstances": "Ignore",
+      "StandbyInstances": "Ignore",
+      "SkipMatching": false
+    }
+}

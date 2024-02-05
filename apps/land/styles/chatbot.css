@@ -1,0 +1,29 @@
+#zsiq_float {
+  display: none;
+}
+
+.zsiq_custommain.siq_bR {
+  width: 83px !important;
+  height: 83px !important;
+  position: fixed;
+  padding: 0;
+  bottom: 40px;
+}
+
+#zsiq_float {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#zsiq_float > img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 767px) {
+  .zsiq_custommain.siq_bR {
+    padding: 0;
+    width: 65px !important;
+    height: 65px !important;
+  }
+}

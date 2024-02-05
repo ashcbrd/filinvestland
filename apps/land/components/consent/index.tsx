@@ -1,0 +1,25 @@
+"use client";
+
+import { useEffect } from "react";
+
+const Consent = () => {
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+
+    function successFunction(position: any) {
+      console.log(position);
+    }
+
+    function errorFunction() {
+      console.log("Unable to retrieve your location.");
+    }
+  }, []);
+
+  return null;
+};
+
+export default Consent;

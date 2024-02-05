@@ -1,0 +1,22 @@
+name: manual-deploy
+
+on: workflow_dispatch
+
+jobs:
+  deployment:
+    runs-on: main
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deleting CMS on PM2
+        run: pm2 delete cms
+        continue-on-error: true
+      - name: Install Packages
+        run: yarn install
+      - name: Build CMS
+        working-directory: ./apps/cms
+        run: yarn build
+      - name: Setup CMS to PM2
+        working-directory: ./apps/cms
+        run: pm2 start npm --name cms -- run serve
+      - run: pm2 describe cms
+      - run: pm2 logs --nostream

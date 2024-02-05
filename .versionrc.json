@@ -1,0 +1,16 @@
+{
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "build", "hidden": true },
+    { "type": "chore", "hidden": true },
+    { "type": "docs", "hidden": true },
+    { "type": "style", "hidden": true },
+    { "type": "refactor", "hidden": true },
+    { "type": "perf", "hidden": true },
+    { "type": "test", "hidden": true }
+  ],
+  "issueUrlFormat": "https://repo.projectgrey.net/filinvest/filinvest/issues/{{id}}",
+  "commitUrlFormat": "https://repo.projectgrey.net/filinvest/filinvest/commits/{{hash}}",
+  "compareUrlFormat": "https://repo.projectgrey.net/filinvest/filinvest/compare/{{previousTag}}...{{currentTag}}"
+}
